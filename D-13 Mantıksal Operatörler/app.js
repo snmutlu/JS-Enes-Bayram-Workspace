@@ -23,7 +23,7 @@
 
 // console.log(yas>18 && para>3000 && saglikliMi==true);
 
-//! || : VEYA Operatörü
+//! || : VEYA Operatörü  ctrl + alt + - ile dikey çizgi yapılabilir.
 // Birden çok ihtimal veya koşulun herhangi birinin sağlanmasının yeterli olduğu operatördür.
 //Örn;
 
