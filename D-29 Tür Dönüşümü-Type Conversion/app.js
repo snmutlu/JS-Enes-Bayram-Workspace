@@ -64,11 +64,3 @@ Gelişmiş veri tipleri: Object, function
 // let rakamlar = String([1,2,3,4]);
 // console.log(typeof rakamlar);
 // console.log(rakamlar);
-
-
-
-
-
-
-
-123123213
