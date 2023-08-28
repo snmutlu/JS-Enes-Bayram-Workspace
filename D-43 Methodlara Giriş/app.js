@@ -8,3 +8,4 @@ parça parça kodlayıp projede birleştirebiliriz. Bu sayede ihtiyacımız olan
 yazılmış bir methodu tekrar tekrar çağırarak bu işlemleri gerçekleştirebiliyoruz.
 
 */
+//
