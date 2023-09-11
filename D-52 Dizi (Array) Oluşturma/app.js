@@ -21,5 +21,7 @@ Biz dizilerin içerisindeki elemanları index numaraları ile çağırabiliriz.
 
 let name = ["Mutlu","Ceyda","Selma"]
 
+console.log(name[1]);
+
 Dizilerde sayma işlemi 0'dan başlar yani biz yukarıdaki dizide "Mutlu" kişisini çağırmak istersek 0. indexi çağırmamız gerekir. "Selma", kişisini çağırmak istersek 2. indexi çağırmamız gerekir
 */
