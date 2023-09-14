@@ -1,4 +1,6 @@
 //? Kitap Bulma Uygulaması
+let yeniSatir = "\r\n";
+
 
 let kitap1 = { isim: "Her Şeyi Düşünme", yazar: "Anne Bogel", fiyat: 25, raf: "1.5.RAF" };
 let kitap2 = { isim: "Hiçbir Karşılaşma Tesadüf Değildir", yazar: "Hakan Mengüç", fiyat: 56, raf: "2.3.RAF" };
@@ -52,7 +54,7 @@ function rafOlustur() {
     let satir = "";
     for (let i = 0; i < raflar.length; i++) {
         for (let j = 0; j < 5; j++) {
-            satir += "|" + (raflar[i][j].goster ? raflar[i][j].kod : "---") + "";
+            satir += "|" + (raflar[i][j].goster ? raflar[i][j].kod : "---") + "|";
         }
         console.log(satir);
         console.log("-------------------------");
@@ -61,14 +63,23 @@ function rafOlustur() {
 
 }
 
+let ad = null;
+let yazar = null;
+let kitapFiyat = null;
+
 function kodBul(kitapIsmi) {
     let rafKod = null;
     kitaplar.forEach(function (kitap) {
         if (kitap.isim.toUpperCase().includes(kitapIsmi.toUpperCase(), 0)) {
             rafKod = kitap.raf;
+            ad = kitap.isim;
+            yazar = kitap.yazar;
+            kitapFiyat = kitap.fiyat;
         }
     });
+    
     return rafKod;
+    
 }
 
 
@@ -91,6 +102,7 @@ let rafKod = kodBul(kitapIsmi);
 if (rafKod != null) {
     raftaGoster(rafKod);
     rafOlustur();
+    console.log("Kitap Adı: "+ad+yeniSatir+"Kitap Yazarı: "+yazar+yeniSatir+"Kitap Fiyatı: "+kitapFiyat);
 }
 else {
     alert("Girdiğiniz kitap kütüphanemizde bulunmamaktadır.");

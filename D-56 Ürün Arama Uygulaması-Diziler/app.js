@@ -64,3 +64,9 @@ function filtreliUrunleriYazdir(urunler) {
 
 filtreliUrunleriDoldur(urunler);
 filtreliUrunleriYazdir(filtreliUrunler);
+
+
+/*
+Öncelikle ürünlerimizin bilgilerini tanımladığımız objeler tanımladık
+sonrasında ürünlerimizi urunler isminde bir dizide toplu şekilde tutmuş olduk ve kullanıcıdan bir ürün ismi aldık. Sonrasında ürünlerin bulunduğu dizi içerisinde dönüp kontrol etme işlemini yapacak bir fonksiyon oluşturduk ve forEach methodu ile bütün ürün isimlerini kullanıcının vermiş olduğu isimle eşleştirdik. Bu işlemi yaparken büyük-küçük harf hassasiyetini ortadan kaldırmak için toUpperCase methodunu kullandık. Ayrıca kullanıcıdan aldığımız isim değerini dizi içerisinde aramak için de .includes methodundan faydalandık. Sonrasında eşleşen ürünleri filtreliUrunler dizisi içerisine .push methodu ile ekledik. Sonrasında filtrelediğimiz eşleşen ürünleri filtreliUrunleriYazdir fonksiyonu ile ekrana yazdırdık.
+*/
