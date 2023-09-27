@@ -2,13 +2,17 @@
 
 // Birşeyi yakalamak için 3 yöntem var 
 
-// 1- İd 2-Classname 3-Tag Name(Etiket İsmi)
+//! 1- İd 2-Classname 3-Tag Name(Etiket İsmi) 
+
+//! 4-querySelector 5-querySelectorAll
+
+//-----------------------------------------------------------//
 
 //! 1-getElementByID
 
 // getElementById : İd'ye göre elementi yakalar.
 
-const button = document.getElementById("todoAddButton");
+// const button = document.getElementById("todoAddButton");
 
 // console.log(button);
 
@@ -53,9 +57,67 @@ const button = document.getElementById("todoAddButton");
 
 // console.log(todoList);
 
+//! 3-getElementsByTagName
+
+// getElementsByClassName : Etiket ismine göre elementi yakalar.
+
+// const forms = Array.from(document.getElementsByTagName("form"));
+
+// forms.forEach(function(forms1){
+//     console.log(forms1);
+// });
+
+// console.log(forms[0].id);
+
+//! 4-querySelector
+
+// querySelector : Css seçicilerini kullanarak istediğimiz seçimi yapmayı sağlar. İd, Class ve TagName'e göre seçim yapabiliriz.
+
+//*Id Kullanarak Seçim
+
+// const clearButton = document.querySelector("#todoClearButton");
+// Burada # seçicisini kullanarak id ile seçmiş olduk. Bunu getElementsById ile de yapabilirdik.
+
+// console.log(clearButton);
+
+//*Class Kullanarak Seçim
+
+// const todoList = document.querySelector(".list-group");
+
+// console.log(todoList);
+
+//! 5-querySelectorAll
+
+// querySelectorAll : //! Eğer birden fazla yerde kullanılmış class varsa ve biz bunların hepsini yakalamak istersek querySelectorAll kullanmamız gerekir.
+
+// const todo2 = document.querySelectorAll(".list-group-item");
+// Bu şekilde bütün list-group-item class'ı içerenleri yakalamış olduk.
+
+// console.log(todo2);
+
+//* TagName Kullanarak Seçim
+
+// const todo3 = document.querySelectorAll("li:nth-child(3)");
+// Biz bu methodla birlikte Css selectorlarını kullanabildiğimiz için first-child, last-child, nth-child(), odd,even gibi seçenekleri kullanabiliriz
+
+// console.log(todo3);
 
 
+// Odd ve Even Örnek;
 
+const todoList1 = Array.from(document.querySelectorAll("li:nth-child(odd)"));
 
+todoList1.forEach(function(todo){
+    todo.style.backgroundColor = "lightgreen";
+})
 
+console.log(todoList1);
 
+const todoList2 = Array.from(document.querySelectorAll("li:nth-child(even)"));
+
+todoList2.forEach(function(todo2){
+    todo2.style.backgroundColor = "lightgrey";
+})
+console.log(todoList2);
+
+// Burada odd ve even selectorleri sayesinde tek sayıları ve çift sayıları seçip istediğimiz gibi renklendirme yapabilmiş olduk.
