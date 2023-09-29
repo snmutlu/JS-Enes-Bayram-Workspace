@@ -71,21 +71,21 @@ const card = document.querySelector(".card");
 
 // console.log(value);
 
-//Todo: Örneğin Todo 3'e "row" class'lı div'den başlayarak ulaşmaya çalışalım ve değişik
-//Todo: style özellikleri verelim.
+//Todo: Örneğin Todo 3'e "row" class'lı div'den başlayarak ulaşmaya çalışalım ve 
+//Todo: değişik style özellikleri verelim.
 
-const captureTodo3 = document.querySelector(".row");
+// const captureTodo3 = document.querySelector(".row");
 
 
-const todo3 = captureTodo3.children[0].children[3].children[2].children[1].nextElementSibling;
+// const todo3 = captureTodo3.children[0].children[3].children[2].children[1].nextElementSibling;
 
-const change = todo3;
-change.textContent = "Ben değiştim!";
-change.style.color = "purple";
-change.style.backgroundColor = "lightgrey";
-change.style.fontWeight = "bold";
+// const change = todo3;
+// change.textContent = "Ben değiştim!";
+// change.style.color = "purple";
+// change.style.backgroundColor = "lightgrey";
+// change.style.fontWeight = "bold";
 
-console.log(todo3);
+// console.log(todo3);
 
 //* Burada Todo 3 textContent'imizin bulunduğu etiketi yakalayıp change değişkenimize
 //* atamış olduk. Ve sonrasında .style özelliğini kullanarak css özelliklerini değiştirdik.
