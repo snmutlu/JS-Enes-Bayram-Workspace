@@ -36,7 +36,8 @@
 
 
 // let buttonText = button.textContent; // .textContent methodu string tipinde yazdırır.
-// let buttonText2 = button.innerHTML; // .innerHTML methodu ile html kodlarını algılayacak şeklinde yazılarımızı yazdırmış oluruz.
+// let buttonText2 = button.innerHTML; // .innerHTML methodu ile html kodlarını
+// algılayacak şeklinde yazılarımızı yazdırmış oluruz.
 
 // console.log(buttonText);
 // console.log(buttonText2);
@@ -49,6 +50,14 @@
 
 // getElementsByClassName : Class ismine göre elementi yakalar.
 
+// const list = document.getElementsByClassName("list-group-item")[2];
+// console.log(list);
+
+// Burada bütün list-group-item class'lı elementleri yakaladığımız için biz özel
+// olarak yakalamak istediğimiz elementin index numarasını verebiliriz.
+
+
+
 // const todoList = Array.from(document.getElementsByClassName("list-group-item"));
 
 // todoList.forEach(function(todo){
@@ -59,7 +68,7 @@
 
 //! 3-getElementsByTagName
 
-// getElementsByClassName : Etiket ismine göre elementi yakalar.
+// getElementsByTagName : Etiket ismine göre elementi yakalar.
 
 // const forms = Array.from(document.getElementsByTagName("form"));
 
@@ -71,12 +80,13 @@
 
 //! 4-querySelector
 
-// querySelector : Css seçicilerini kullanarak istediğimiz seçimi yapmayı sağlar. İd, Class ve TagName'e göre seçim yapabiliriz.
+// querySelector : Css seçicilerini kullanarak istediğimiz seçimi yapmayı sağlar.
+// İd, Class ve TagName'e göre seçim yapabiliriz.
 
 //*Id Kullanarak Seçim
 
 // const clearButton = document.querySelector("#todoClearButton");
-// Burada # seçicisini kullanarak id ile seçmiş olduk. Bunu getElementsById ile de yapabilirdik.
+// Burada # seçicisini kullanarak id ile seçmiş olduk. Bunu getElementById ile de yapabilirdik.
 
 // console.log(clearButton);
 
@@ -88,36 +98,38 @@
 
 //! 5-querySelectorAll
 
-// querySelectorAll : //! Eğer birden fazla yerde kullanılmış class varsa ve biz bunların hepsini yakalamak istersek querySelectorAll kullanmamız gerekir.
+// querySelectorAll : //! Eğer birden fazla yerde kullanılmış class varsa ve biz
+//! bunların hepsini yakalamak istersek querySelectorAll kullanmamız gerekir.
 
 // const todo2 = document.querySelectorAll(".list-group-item");
-// Bu şekilde bütün list-group-item class'ı içerenleri yakalamış olduk.
-
 // console.log(todo2);
+
+// Bu şekilde bütün list-group-item class'ı içerenleri yakalamış olduk.
 
 //* TagName Kullanarak Seçim
 
 // const todo3 = document.querySelectorAll("li:nth-child(3)");
-// Biz bu methodla birlikte Css selectorlarını kullanabildiğimiz için first-child, last-child, nth-child(), odd,even gibi seçenekleri kullanabiliriz
+// Biz bu methodla birlikte Css selectorlarını kullanabildiğimiz için first-child,
+// last-child, nth-child(), odd,even gibi seçenekleri kullanabiliriz
 
 // console.log(todo3);
 
 
 // Odd ve Even Örnek;
 
-const todoList1 = Array.from(document.querySelectorAll("li:nth-child(odd)"));
+// const todoList1 = Array.from(document.querySelectorAll("li:nth-child(odd)"));
 
-todoList1.forEach(function(todo){
-    todo.style.backgroundColor = "lightgreen";
-})
+// todoList1.forEach(function(todo){
+//     todo.style.backgroundColor = "lightgreen";
+// })
 
-console.log(todoList1);
+// console.log(todoList1);
 
-const todoList2 = Array.from(document.querySelectorAll("li:nth-child(even)"));
+// const todoList2 = Array.from(document.querySelectorAll("li:nth-child(even)"));
 
-todoList2.forEach(function(todo2){
-    todo2.style.backgroundColor = "lightgrey";
-})
-console.log(todoList2);
+// todoList2.forEach(function(todo2){
+//     todo2.style.backgroundColor = "lightgrey";
+// })
+// console.log(todoList2);
 
 // Burada odd ve even selectorleri sayesinde tek sayıları ve çift sayıları seçip istediğimiz gibi renklendirme yapabilmiş olduk.
