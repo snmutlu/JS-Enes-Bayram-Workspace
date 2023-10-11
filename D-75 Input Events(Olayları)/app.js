@@ -8,6 +8,7 @@
 5-cut //* Input içerisindeki bir yazı kesildiğinde tetiklenen eventtir.
 6-select //* Input içerisindeki bir yazı seçildiğinde tetiklenen eventtir.
 */
+///
 
 const todo = document.querySelector("#todoName");
 
