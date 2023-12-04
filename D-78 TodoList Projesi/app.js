@@ -6,6 +6,7 @@ const todoList = document.querySelector(".list-group");
 const firstCardBody = document.querySelectorAll(".card-body")[0];
 const secondCardBody = document.querySelectorAll(".card-body")[1];
 const clearButton = document.querySelector("#clearButton");
+const filterInput = document.querySelector("#todoSearch");
 
 let todos = [];
 
@@ -14,6 +15,26 @@ function runEvents() {
     form.addEventListener("submit", addTodo);
     document.addEventListener("DOMContentLoaded", pageLoaded);
     secondCardBody.addEventListener("click",removeTodoToUI);
+    clearButton.addEventListener("click", allTodosClear);
+    filterInput.addEventListener("keyup", filter);
+}
+
+function allTodosClear(){
+    const todoList = document.querySelectorAll(".list-group-item");
+    if(todoList.length>0){
+        //*Ekrandan Silmek
+        todoList.forEach(function(allTodos){
+            allTodos.remove();
+        });
+
+        //*Storage'dan Silmek
+        todos=[];
+        localStorage.setItem("keyTodos",JSON.stringify(todos));
+        showAlert("success","Tüm Todo'lar başarıyla temizlendi.");
+    }
+    else{
+        showAlert("danger","Silinecek bir Todo bulunamadı!");
+    }
 }
 
 function pageLoaded() {
@@ -24,12 +45,45 @@ function pageLoaded() {
 
 }
 
+function filter(e){
+    const filterValue = e.target.value.toLowerCase().trim();
+    const todoList = document.querySelectorAll(".list-group-item");
+
+    if(todoList.length>0){
+        todoList.forEach(function(todo){
+            if(todo.textContent.toLowerCase().trim().includes(filterValue)){
+                //*
+                todo.setAttribute("style","display : block");
+            }
+            else{
+                todo.setAttribute("style","display : none !important");
+            }
+        });
+    }
+    else{
+        showAlert("warning","Filtrelenecek herhangi bir Todo bulunamadı!");
+    }
+}
+
 function removeTodoToUI(e){
     if(e.target.className=="fa fa-remove"){
+        //* Ekrandan Silmek
         const todo = e.target.parentElement.parentElement;
         todo.remove();
         showAlert("warning","Todo Başarıyla Silindi");
+        //* Storage'dan Silmek
+        removeTodoToStorage(todo.textContent);
     }
+}
+
+function removeTodoToStorage(removeTodo){
+    checkTodosFromStorage();
+    todos.forEach(function(todo,index){
+       if(removeTodo===todo){
+        todos.splice(index,1);
+       } 
+    });
+    localStorage.setItem("keyTodos", JSON.stringify(todos));
 }
 
 function addTodo(e) {
@@ -112,5 +166,5 @@ function showAlert(type, message) {
 
     setTimeout(function () { //* Bu fonksiyon oluşturulan divi kaldırmak için kullanıldı
         div.remove();
-    }, 1700) //* Buradaki virgülden sonraki değer timeout milisaniyesi.
+    }, 2000) //* Buradaki virgülden sonraki değer timeout milisaniyesi.
 }
