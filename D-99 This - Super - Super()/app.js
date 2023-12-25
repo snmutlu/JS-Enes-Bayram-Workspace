@@ -21,7 +21,7 @@
 
 //! Super
 /*Üst sınıfın içindeki demektir. Bir üst sınıfın içindeki özelliklere,
-methodlara ulaşmakl için kullandığımız bir anahtar kelimedir.*/
+methodlara ulaşmak için kullandığımız bir anahtar kelimedir.*/
 
 // class Person1 {
 //     firstName = "Mutlu";
@@ -31,14 +31,14 @@ methodlara ulaşmakl için kullandığımız bir anahtar kelimedir.*/
 // }
 
 // class Student1 extends Person1 {
-//     write(){
+//     write1(){
 //         super.write();
 //     }
 // }
 
-// const student1 = new Student1();
+// const student = new Student1();
 
-// student1.write();
+// student.write1();
 
 //! Super()
 /* Miras almış olduğumuz sınıfın constructor'unu gösterir ve biz
@@ -46,7 +46,7 @@ tekrar tekrar this kullanmak zorunda kalmayız.
 super() methodu sayesinde almış olduğumuz bilgileri üst sınıfın
 constructor'una göndermiş oluyoruz. Yani üst sınıfı beslemiş oluyoruz.*/
 
-class Person2 {
+class Person {
     constructor(firstName,lastName,salary){
         this.firstName = firstName;
         this.lastName = lastName;
@@ -57,7 +57,7 @@ class Person2 {
     }
 }
 
-class Student2 extends Person2 {
+class Student extends Person {
     constructor(firstName,lastName,salary){
         super(firstName,lastName,salary)
     }
@@ -67,7 +67,7 @@ class Student2 extends Person2 {
     }
 }
 
-class Engineer extends Person2{
+class Engineer extends Person {
     constructor(firstName,lastName,salary){
         super(firstName,lastName,salary)
     }
@@ -76,8 +76,8 @@ class Engineer extends Person2{
     }
 }
 
-const student = new Student2("Mutlu","SENEM",50000);
+const student = new Student("Mutlu","SENEM",50000);
 student.writeInfo2();
 
-const engineer1 = new Engineer("Ceyda","ULU",20000);
-engineer1.writeInfo3();
+const engineer = new Engineer("Ceyda","ULU",20000);
+engineer.writeInfo3();
