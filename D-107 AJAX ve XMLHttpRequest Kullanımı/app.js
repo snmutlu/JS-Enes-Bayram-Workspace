@@ -1,0 +1,2 @@
+//? AJAX Nedir? - AJAX Kullanımı
+
